@@ -63,8 +63,8 @@ class Handler extends ExceptionHandler
         }
 
         if($exception instanceof QueryException){
-            return response()->json(["res" => false, "message" => "Error de consulta BDD/ Campo duplicado" , $exception->getMessage()], 500);
-        }
+            return response()->json(["res" => false, "message" => "Error de consulta BDD/ Campo duplicado"], 500);
+        } 
 
         if($exception instanceof HttpException){
             return response()->json(["res" => false, "message" => "Error de ruta"], 404);

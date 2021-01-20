@@ -19,6 +19,8 @@ class DatabaseSeeder extends Seeder
     public function run()
     {
 
+        $this->call(RoleTableSeeder::class);
+
     //    $roles =  DB::select('SELECT id  FROM roles WHERE rol_name = ?', ["admin"]);
 
     //    dd($roles);
@@ -35,6 +37,8 @@ class DatabaseSeeder extends Seeder
     // "password" => "123456789",
     // "role_id" => $roles[0]->id
     //     ]);
+
+    
 
         
 

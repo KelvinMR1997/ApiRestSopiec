@@ -48,7 +48,7 @@ class UserLoginController extends Controller
             return response()->json([
                 'res'=> true,
                 'token'=>$token,
-                'message' => 'Bienvenido a la Api de SOPIEC'
+                'message' => 'Bienvenido a SOPIEC'
             ],200);
         }
         else{

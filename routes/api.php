@@ -33,7 +33,7 @@ use App\Http\Controllers\UsersAdminController;
 
 Route::post('login',[UserLoginController::class, 'login'])->name('login');
 
-// Proteger api
+// Proteger api para usuarios deslogueados
 Route::group(['middleware'=>'auth:api'], function(){
     // Todos los metodos del controlador users
     Route::apiResource('/users', App\Http\Controllers\UsersAdminController::class)->except('store');
@@ -47,3 +47,8 @@ Route::group(['middleware'=>'auth:api'], function(){
     Route::post('/NewItem',[ItemsController::class, 'store'])->name('/NewItem');
 
 });
+
+// Route::group(['middleware' => 'admin'], function () {
+//     //Registrar nuevo usuario
+//     Route::post('/NewUser',[UsersAdminController::class, 'store'])->name('/NewUSer');
+// });
